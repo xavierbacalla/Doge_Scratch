@@ -1,0 +1,38 @@
+/* style.css */
+html, body {
+  height: 100%;
+}
+
+canvas {
+  outline: black 3px solid;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  background-color: #93B874;
+  /* This centers our sketch horizontally. */
+  justify-content: center;
+  /* This centers our sketch vertically. */
+  /* align-items: center; */
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+  supported by Chrome and Opera */
+}
+
+/* div {
+  cursor: url('assets/doge_coin2.png'), auto;
+} */
