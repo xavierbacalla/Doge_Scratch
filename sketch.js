@@ -1,55 +1,33 @@
-var s = 50; // cursor image size
-var offset = 30;
-
 let img;
-let canvas;
-let extraCanvas;
-let button;
-
+let stamp;
+let topLayer;
 
 function preload() {
-  img = loadImage('assets/doge.png');
-  backdrop = loadImage('assets/backdrop.png');
+  img = loadImage("backdrop.png");
+  //stamp = loadImage("stamp.png");
 }
-
 
 function setup() {
-  canvas = createCanvas(300, 200);
-  canvas.parent('sketch-holder');
-
-  extraCanvas = createGraphics((width - offset) * pixelDensity(), (height - offset) * pixelDensity());
-  extraCanvas.parent('sketch-holder');
-
-  resetSketch();
-
-  button = createButton('reset');
-  button.parent('sketch-holder');
-  button.mousePressed(resetSketch);
-  button.position(button.center('horizontal'), height + 25);
-
-  noCursor();
+  createCanvas(600, 600);
+  topLayer = createGraphics(width, height);
+  
+  topLayer.background(200);
+  topLayer.textSize(50);
+  topLayer.textAlign(CENTER);
+  topLayer.text("SCRATCH ME", width/2, height/2);
+    
+  topLayer.imageMode(CENTER);
+  topLayer.strokeWeight(40);
+  topLayer.blendMode(REMOVE);  
 }
-
 
 function draw() {
-  // trails
-  if (mouseIsPressed && mouseButton === LEFT) { // Draws a continuous line.
-    //blendMode(MULTIPLY);
-    extraCanvas.strokeWeight(30);
-    extraCanvas.stroke(255);
-    extraCanvas.line(mouseX - offset / 2, mouseY - offset / 2, pmouseX - offset / 2, pmouseY - offset / 2);
+  image(img, 0, 0, width, height);
+  
+  if(mouseIsPressed) {
+    topLayer.line(pmouseX, pmouseY, mouseX, mouseY);
+    // topLayer.image(stamp, mouseX, mouseY, stamp.width * 2, stamp.height*2);
   }
-
-  // no trails
-  //background(255);
-  image(backdrop, 0, 0, width/10, height/10);
-  image(extraCanvas, offset / 2, offset / 2, width - offset, height - offset);
-  image(img, mouseX - s / 2, mouseY - s / 2, s, s);
-}
-
-
-function resetSketch() {
-  //background(255);
-  image(backdrop, 0, 0, width/10, height/10);
-  extraCanvas.background(192);
+  
+  image(topLayer, 0, 0);
 }
