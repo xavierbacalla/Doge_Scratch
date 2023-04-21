@@ -32,7 +32,7 @@ function setup() {
 
 function draw() {
   // trails
-  if (mouseIsPressed && mouseButton) {// === LEFT || touches) { // Draws a continuous line.
+  if (mouseIsPressed && mouseButton === LEFT) { // Draws a continuous line.
     //blendMode(MULTIPLY);
     extraCanvas.strokeWeight(30);
     extraCanvas.stroke(255);
