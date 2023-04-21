@@ -49,6 +49,7 @@ function draw() {
 
 
 function resetSketch() {
-  background(255);
+  //background(255);
+  image(backdrop, 0, 0, width, height);
   extraCanvas.background(192);
 }
