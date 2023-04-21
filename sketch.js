@@ -13,7 +13,7 @@ function preload() {
 
 
 function setup() {
-  canvas = createCanvas(300*2, 200*2);
+  canvas = createCanvas(300, 200);
   canvas.parent('sketch-holder');
 
   extraCanvas = createGraphics((width - offset) * pixelDensity(), (height - offset) * pixelDensity());
