@@ -8,7 +8,7 @@ let button;
 
 
 function preload() {
-  img = loadImage('assets/doge_coin2.png');
+  img = loadImage('assets/doge.png');
   backdrop = loadImage('assets/backdrop.png');
 }
 
