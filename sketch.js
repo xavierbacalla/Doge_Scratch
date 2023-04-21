@@ -9,6 +9,7 @@ let button;
 
 function preload() {
   img = loadImage('assets/doge_coin2.png');
+  backdrop = loadImage('assets/backdrop.png');
 }
 
 
@@ -40,7 +41,8 @@ function draw() {
   }
 
   // no trails
-  background(255);
+  //background(255);
+  image(backdrop, 0, 0, width, height);
   image(extraCanvas, offset / 2, offset / 2, width - offset, height - offset);
   image(img, mouseX - s / 2, mouseY - s / 2, s, s);
 }
