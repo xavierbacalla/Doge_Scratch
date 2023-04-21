@@ -42,7 +42,7 @@ function draw() {
 
   // no trails
   //background(255);
-  image(backdrop, 0, 0, width, height);
+  image(backdrop, 0, 0, width/10, height/10);
   image(extraCanvas, offset / 2, offset / 2, width - offset, height - offset);
   image(img, mouseX - s / 2, mouseY - s / 2, s, s);
 }
@@ -50,6 +50,6 @@ function draw() {
 
 function resetSketch() {
   //background(255);
-  image(backdrop, 0, 0, width, height);
+  image(backdrop, 0, 0, width/10, height/10);
   extraCanvas.background(192);
 }
